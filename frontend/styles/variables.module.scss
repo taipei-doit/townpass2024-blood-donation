@@ -1,0 +1,179 @@
+$root-color: (
+    --color-primary: #0073c8,
+    --color-secondary: #ff8200,
+    --color-tertiary: #19b9d2,
+    --color-gray: #7d7d7d,
+    --color-pink: #e377c2,
+    --color-error: #ee0000,
+);
+
+$colors: (
+    primary: map-get($root-color, --color-primary),
+    primary-light: lighten(map-get($root-color, --color-primary), 10%),
+    primary-dark: darken(map-get($root-color, --color-primary), 10%),
+    secondary: map-get($root-color, --color-secondary),
+    secondary-light: lighten(map-get($root-color, --color-secondary), 10%),
+    secondary-dark: darken(map-get($root-color, --color-secondary), 10%),
+    tertiary: map-get($root-color, --color-tertiary),
+    tertiary-light: lighten(map-get($root-color, --color-tertiary), 10%),
+    tertiary-dark: darken(map-get($root-color, --color-tertiary), 10%),
+    gray: map-get($root-color, --color-gray),
+    success: #2ca02c,
+    error: map-get($root-color, --color-error),
+
+    text-dark: #555,
+    text-normal: map-get($root-color, --color-gray),
+    text-light: #999
+);
+
+$series-colors: (
+    0: #8c8f91,
+    1: #1e75b3,
+    2: #ff7f0e,
+    3: #2ca02c,
+    4: #d72828,
+    5: #9467bd,
+    6: #8c564b,
+    7: #e377c2,
+    8: #17becf,
+    9: #bcbd22,
+
+    10: #424445,
+    11: #155380,
+    12: #b2590a,
+    13: #1e6e1e,
+    14: #8a1a1a,
+    15: #583d70,
+    16: #402722,
+    17: #965d85,
+    18: #21909c,
+    19: #898a27,
+
+    20: #bec2c4,
+    21: #83bce5,
+    22: #ffb573,
+    23: #79d479,
+    24: #f08d8d,
+    25: #c7a8e3,
+    26: #bf968e,
+    27: #fccfef,
+    28: #7ce7f2,
+    29: #eff05b,
+);
+
+$icon-list: (
+    // field icon
+    filter: "filter.png",
+    search: "search.png",
+    calendar: "calendar.png",
+    setting: "menu-2.png",
+
+    // 上傳/下載
+    upload: "upload-2.png",
+    download: "download--v1.png",
+
+    // 包含/排除
+    include: "equal-sign--v1.png",
+    exclude: "not-equal.png",
+
+    // 播放按鈕
+    play: "play.png",
+    pause: "pause.png",
+    follow: "near-me.png",
+    
+    // 開闔/釘選
+    expand: "full-screen.png",
+    collapse: "collapse.png",
+    pin: "pin3.png",
+
+    // +/-
+    plus: "plus-math.png",
+    minus: "minus-math.png",
+
+    // 放大/縮小/重置
+    zoom-out: "zoom-out--v1.png",
+    zoom-in: "zoom-in--v1.png",
+    reset: "recurring-appointment--v1.png",
+
+    // 資訊/警告/錯誤
+    info: "info--v1.png",
+    warning: "error--v1.png",
+    error: "cancel--v1.png",
+
+    // 雜項
+    check: "checkmark.png",
+    nodata: "no-data-availible.png",
+    edit: "edit--v1.png",
+    dragList: "drag-reorder--v1.png",
+    open: "external-link--v1.png",
+    arrow: "collapse-arrow.png",
+    iOS: "mac-os.png",
+    Android: "android-os--v2.png",
+    more: "more--v2.png",
+    marker: "marker--v1.png",
+
+    menu_global-reach: "globe.png",
+    menu_inbound-flow: "airplane-landing.png",
+    menu_outbound-flow: "airplane-take-off.png",
+    menu_accuracy-of-trata: "accuracy.png",
+    menu_traffic-overview: "statistics.png",
+    menu_user-profile: "identification-documents--v1.png",
+    menu_flow: "human-footprints.png",
+    menu_app-lookalike: "find-user-male.png",
+    menu_targeting: "conference-call.png",
+    menu_intelligent-route-mining: "track-order.png",
+    menu_movement: "point-objects.png",
+    menu_scale-of-trata: "airport.png",
+    menu_poi-segmentation: "worldwide-location.png",
+    menu_overlap: "query-inner-join.png",
+    menu_foot-traffic-monitor: "place-marker.png",
+    menu_trajectory-pattern-mining: "waypoint-map.png",
+    menu_poi-data: "point-of-interest.png",
+    menu_audience-data: "crowd.png",
+    menu_app-data: "apple-app-store--v2.png", 
+    menu_transaction-data: "invoice-1.png",
+    menu_company-management: "organization-chart-people.png",
+    menu_administrator: "user-shield.png",
+    menu_data-report: "graph-report.png",
+    menu_dmp-light: "financial-growth-analysis.png",
+    menu_web-analysis: "web-analystics.png",
+    menu_campaign-kpi-analysis: "paid-search--v2.png",
+    menu_footfall-attribution: "school-crossing-patrol--v1.png",
+    menu_mapper-delivery: "handle-with-care.png",
+    menu_data-supply-side: "handshake.png",
+    menu_analytics-audit-report: "financial-growth-analysis.png"
+);
+
+$menuOpenWidth: 300px;
+
+$z-index: (
+    dropdown: 1000,
+    sticky: 2000,
+    fixed: 3000,
+    popover: 4000,
+    tooltip: 5000,
+    alert: 6000
+);
+
+$border-radius: (
+    large: 6px,
+    medium: 4px,
+    small: 2px
+);
+$split-border: 1px solid #ddd;
+$alpha-bg: rgba(255, 255, 255, .8);
+
+$shadow: (
+    normal: 0px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    tableTD: 1px 1px 2px 0px rgba(0, 0, 0, 0.3),
+    popover: (
+        0px 5px 5px -3px rgba(0, 0, 0, 0.1),
+        0px 8px 10px 1px rgba(0, 0, 0, 0.1),
+        0px 3px 14px 2px rgba(0, 0, 0, 0.1),
+    ),
+);
+
+$transition-timing-function: (
+    lively: cubic-bezier(0.4, 0, 0.2, 1)
+)
+

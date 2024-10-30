@@ -1,0 +1,21 @@
+.block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: calc(100vh - 100px);
+    min-width: 300px;
+    width: 80%;
+    .title {
+        font-size: 50px;
+    }
+    .subtitle {
+        font-size: 30px;
+    }
+    .button {
+        width: fit-content;
+        margin: 20px;
+    }
+}

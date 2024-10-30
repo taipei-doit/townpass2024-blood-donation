@@ -1,0 +1,573 @@
+
+.main {
+    position: relative;
+    display: flex;
+    width: 100vw;
+    height: auto;
+    background-color: #fff;
+    // background-image: linear-gradient(to bottom right, #fff, #f5f5f5);
+    
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100%;
+}
+
+.content {
+    // padding-top: 100px;
+}
+
+.type {
+    // margin: 10px 0;
+    & + .type {
+        margin-top: 50px;
+    }
+    &.headerPadding {
+        padding-top: 130px;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+    color: white;
+    background-color: #5AB4C5;
+    height: 50px;
+}
+.title {
+    text-align: center;
+    align-self: center;
+}
+.closepanel {
+    display: flex;
+    position: fixed;
+    height: 50px;
+    width: 50px;
+    right: 0;
+    justify-content: center;
+}
+.close {
+    align-self: center;
+    background-image: url('/image/close.svg');
+    background-size: cover;
+    width: 20px;
+    height: 20px;
+    &:hover {
+        opacity: 0.8;
+    }
+}
+
+.tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    border-bottom-width: 1px;
+    --tw-border-opacity: 1;
+    border-bottom-color: rgb(173 184 190 / var(--tw-border-opacity));
+}
+
+.tabLabel {
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    --tw-text-opacity: 1;
+    color: rgb(71 82 89 / var(--tw-text-opacity));
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid #ccc; // 設定邊框顏色
+    border-radius: 4px; // 設定圓角
+    text-transform: none;
+    border: none; // 移除邊框
+}
+
+.tabLabelActive {
+    --tw-text-opacity: 1;
+    color: rgb(46 182 199 / var(--tw-text-opacity));
+}
+
+.slider {
+    position: relative;
+    bottom: 0px;
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 500ms;
+    --tw-bg-opacity: 1;
+    background-color: rgb(46 182 199 / var(--tw-bg-opacity));
+    height: 0.125rem;
+    width: 100%;
+}
+
+.list {
+    padding: 10px 20px;
+}
+
+.listItem {
+    display: flex;
+    flex-direction: row;
+    padding: 5px 0;
+    align-items: center;
+}
+.listLabelWrapper {
+    margin: auto;
+    flex: 1;
+}
+.listLabel {
+    
+}
+.infoWrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .des {
+        padding-right: 10px;
+        color: #7D7D7D;
+        font-size: 0.85rem;
+    }
+    .status {
+        padding-right: 15px;
+    }
+    &.infoLowStock {
+        .status {
+            color: #D45251;
+        }
+    }
+    &.infoHighStock {
+        .status {
+            color:#76A732;
+        }
+    }
+    &.infoNormalStock {
+        .status {
+            color: #FD853A;
+        }
+    }
+    .bloodStockWrapper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 35px;
+        height: 35px;
+        border-radius: 50px;
+    }
+}
+
+
+.listMarker {
+    display: flex;
+    background-size: cover;
+    width: 25px;
+    height: 25px;
+}
+
+.lowStock {
+    background-color: rgba(212, 82, 81, 0.3);
+    .listMarker {
+        background-image: url('/image/starving.svg');
+        width: 30px;
+        height: 20px;
+    }
+}
+.highStock {
+    background-color: rgba(118, 167, 50, 0.3);
+    .listMarker {
+        background-image: url('/image/full.svg');
+    }
+}
+.normalStock {
+    background-color: rgba(253, 133, 58, 0.3);
+    .listMarker {
+        background-image: url('/image/normal.svg');
+    }
+}
+
+.mapWrapper {
+    height: calc(100vh - 240.5px);
+    overflow: hidden;
+}
+
+.infoPanelWrapper {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 0.75rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+    
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px -4px 10px;
+    .titlePanel {
+        width: 100%;
+    }
+}
+
+.titlePanel {
+    display: flex;
+    flex-direction: row;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    justify-content: space-between;
+    .title {
+        display: flex;
+        flex-direction: row;
+    }
+    span {
+        font-weight: 700;
+        margin-right: 8px;
+    }
+    .sum {
+        color: rgba(46, 182, 199, 1);
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        border-color: rgba(46, 182, 199, 1);
+        border-width: 1px;
+        border-radius: 9999px;
+        border-style: solid;
+    } 
+    .action {
+        color: rgba(46, 182, 199, 1);
+        text-decoration: inherit;
+    }
+}
+
+.listWrapper {
+    display: flex;
+    padding-bottom: 2rem;
+    flex-direction:column;
+    height: 100vh;
+    .titlePanel {
+        
+        display: flex;
+        flex-direction: column;
+        padding: 1.25rem;
+        .title {
+            align-self: flex-start;
+            margin-bottom: 0.5rem;
+            span {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+            }
+        }
+        p {
+            margin: 0;
+            color: rgb(115 137 149 / 1);
+            font-size: 0.875rem;
+            line-height: 1.25rem;
+        }
+    }
+    .listItemPanel {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        --tw-border-opacity: 1;
+        border-color: rgb(202 209 213 / var(--tw-border-opacity));
+        border-bottom-width: 1px;
+        margin-left: 1.25rem;
+        margin-right: 1.25rem;
+        
+    }
+    
+    .detailTitlePanel {
+        padding: 1.25rem;
+        margin-bottom: 1rem;
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+        p img {
+            transform: rotate(90deg);
+        }
+        .listTitle {
+            display: flex;
+            align-items: center;
+            text-decoration-line:none;
+            margin-bottom: 0.5rem;
+            span {
+                font-size: 1.25rem;
+                line-height: 1.75rem;
+            }
+        }
+        .listDetail {
+            margin-bottom: 0.5rem;
+        }
+        .listDes {
+            margin-bottom: 0.5rem;
+            text-decoration-line:underline;
+        }
+    }
+    .detailcontentPanel {
+        --tw-bg-opacity: 1;
+        background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+        padding: 1.25rem;
+    }
+    p {
+        margin: 0;
+    }
+    .listTitle {
+        text-decoration-line:underline;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+    }
+    .listDes {
+        display: flex;
+        margin-bottom: 0.5rem;
+    }
+    .listDetail {
+        --tw-text-opacity: 1;
+        color: rgb(115 137 149 / 1);
+    }
+    .returnToMap {
+        display: flex;
+        position: absolute;
+        bottom: 10px;
+        padding: 15px 25px;
+        background-color: rgba(46, 182, 199, 1);
+        color: #fff;
+        border-radius: 50px;
+        left: 50%; // 新增：設定左邊距為50%
+        transform: translateX(-50%); // 新增：使用transform來置中
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        img {
+            padding-right: 10px;
+        }
+    }
+    .addButton {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        padding: 11px;
+        border-radius: 50px;
+        background-color: rgba(46, 182, 199, 1);
+
+        div {
+            width: 30px;
+            height: 30px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-image: url('/image/add.svg');
+            &:hover {
+                opacity: 0.8;
+            }
+        }
+    }
+}
+.listWrapperDetail {
+    --tw-bg-opacity: 1;
+    background-color: rgb(241 243 244 / 1);
+    
+}
+.listWrapperDetail.bottom {
+    padding-bottom: 1.25rem;
+}
+.userInfoContainer {
+    background-color: rgb(255 255 255 / 1);
+    display: flex;
+    height: 80px;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 1.25rem;
+    .bloodStockWrapper {
+        width: 70px;
+        height: 70px;
+        overflow: hidden;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        .listMarker {
+            width: 55px;
+            height: 55px;
+        }
+    }
+    .userInfoTitleWrapper {
+        padding-left: 1.25rem;
+    }
+    .userInfoTitle {
+        font-size: 1.25rem;
+        line-height: 1.75rem;
+        margin-bottom: 0.5rem;
+    }
+    .userInfoTime {
+        font-size: 0.85rem;
+        line-height: 1rem;
+        .green {
+            color: #76A732;
+        }
+        .red {
+            color: #D45251;
+        }
+        .gray {
+            padding-left: 0.25rem;
+            color: rgb(115 137 149 / 1);
+            line-height: 0.85rem;
+        }
+    }
+}
+.userInfoCardContainer {
+    background-color: rgb(255 255 255 / 1);
+    display: flex;
+    align-items: center;
+    margin: 10px 20px;
+    padding: 15px;
+    border-radius: 5px;
+    flex-direction: column;
+    .titleWrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        padding-bottom: 5px;
+        .title {
+            display: flex;
+            flex-direction: row;
+            flex: 1;
+            .icon {
+                width: 20px;
+                height: 20px;
+            }
+            div {
+                padding-left: 0.25rem;
+                font-weight: 200;
+            }
+        }
+        .info {
+            display: flex;
+            flex-direction: row;
+            height: 10px;
+            align-items: center;
+            color: rgb(115 137 149 / 1);
+            line-height: 0.55rem;
+            font-size: 0.85rem;
+            .loader {
+                width: 15px;
+                padding-right: 3px;
+            }
+        }
+
+    }
+    .money {
+        .detail {
+            font-size: 0.85rem;
+            padding: 0 5px;
+            color: #7D7D7D;
+        }
+        .button {
+            background-color: rgba(46, 182, 199, 1);
+            color: #fff;
+            width: 90px;
+            border: none;
+            border-radius: 3px;
+            padding: 3px;
+        }
+        a {
+            background-color: rgba(46, 182, 199, 1);
+            color: #fff;
+            width: 90px;
+            border: none;
+            border-radius: 3px;
+            padding: 3px;
+        }
+    }
+    .numberContainer {
+        font-size: 0.85rem;
+        color: #7D7D7D;
+        span {
+            font-size: 1.25rem;
+            line-height: 1.75rem;
+            padding-right: 5px;
+            color: #000;
+        }
+    }
+    .badgeContainer {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        padding: 0 20px;
+        .badge {
+            align-self: center;
+            width: 80px;
+            height: 60px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+        .badge20 {
+            background-image: url('/image/bronze.png');
+        }
+        .badge50 {
+            background-image: url('/image/silver.png');
+        }
+        .badge100 {
+            background-image: url('/image/gold.png');
+        }
+        .inactive {
+            opacity: 0.5;
+        }
+        .detail {
+            font-size: 0.85rem;
+            padding: 3px 5px;
+            color: #7D7D7D;
+            text-align: center;
+        }
+    }
+    .donationRecordContainer {
+        position: relative;
+        width: 100%;
+        .yearRecord {
+            position: relative;
+            padding-left: 10px;
+            margin-bottom: 10px;
+            
+            .year {
+                position: relative;
+                color: rgba(46, 182, 199, 1);
+                padding-left: 15px;
+                .yearpoint {
+                    position: absolute;
+                    top: 7px;
+                    left: -2px;
+                    height: 7px;
+                    width: 7px;
+                    border-radius: 50%;
+                    background-color: rgba(46, 182, 199, 1);
+                }
+            }
+            .recordDetails {
+                position: relative;
+                .yearline {
+                    position: absolute;
+                    height: calc(100% - 20px);
+                    width: 2px;
+                    background-color: rgba(46, 182, 199, 1);
+                    left: 0;
+                }
+                padding: 10px 25px;
+                .record {
+                    .date {
+                        padding-bottom: 5px;
+                    }
+                    .description {
+                        font-size: 0.85rem;
+                        padding: 0 5px;
+                        color: #7D7D7D;
+                    }
+                    + .record {
+                        margin-top: 5px;
+                    }
+                }
+                
+            }
+        }
+    }
+}
