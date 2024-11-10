@@ -1,38 +1,25 @@
-## Development 
-#### 部署流程
-1. branch `dev`推上Github
-2. 自動啟動對應的[Cloud Build觸發條件](https://console.cloud.google.com/cloud-build/triggers;region=global/edit/2b2c1384-356c-4c95-87fc-e6f5472c2099?authuser=1&hl=zh-tw&project=app-wee-landing-prod)
-    * Cloud Build觸發條件中有設定部署用的環境變數：`_NODE_ENV=development`
-    * Cloud Build會讀取cloudbuild.yaml檔案，紀錄有對應的Dockerfile路徑(`docker/$_NODE_ENV/Dockerfile`)
-    * Dockerfile中會複製一份`.env.development`，可在js中取得設定的環境變數
-3. 在[Cloud Build版本紀錄](https://console.cloud.google.com/cloud-build/builds?authuser=1&hl=zh-tw&project=app-wee-landing-prod)查看部署進度，並在[Cloud run](https://console.cloud.google.com/run/detail/asia-east1/wee-openplatform-landing-page-dev/metrics?authuser=1&hl=zh-tw&project=app-wee-landing-prod)查看結果
-4. [Development link](https://wee-openplatform-landing-page-dev-2qr3f7pfeq-de.a.run.app/)
+## 「城市通微服務」— 全方位捐血資訊整合與創新公益機制的微服務解決方案
 
-#### Cloud Storage
-[wee-landing-dev](https://console.cloud.google.com/storage/browser/wee-landing-dev;tab=objects?forceOnBucketsSortingFiltering=true&authuser=1&hl=zh-tw&project=app-wee-landing-prod&prefix=&forceOnObjectsSortingFiltering=false)
+## 專案簡介
+團隊開發了一個公益導向的微服務，旨在促進捐血行為。系統整合了血液基金會網站、PTT 捐血版及各類優惠資訊，並提供捐血室、捐血車定位與優惠整合功能。用戶可新增捐血回報，並參與「周邊餐廳優惠」與「捐血聯誼活動」等創新機制，促進企業社會責任（CSR）及多方合作，提升公益效益。負責實現所有 App 功能，包括地理位置獲取、訊息推播及用戶互動，並利用 AI 創作可愛吉祥物「小血怪」以提升產品吸引力。
 
-## Production 
-#### 部署流程
-1. branch `main`推上Github
-2. 自動啟動對應的[Cloud Build觸發條件](https://console.cloud.google.com/cloud-build/triggers;region=global/edit/ac411ed5-7a1a-49e0-8c93-c91054969069?authuser=1&hl=zh-tw&project=app-wee-landing-prod)
-    * Cloud Build觸發條件中有設定部署用的環境變數：`_NODE_ENV=production`
-    * Cloud Build會讀取cloudbuild.yaml檔案，紀錄有對應的Dockerfile路徑(`docker/$_NODE_ENV/Dockerfile`)
-    * Dockerfile中會複製一份`.env.production`，可在js中取得設定的環境變數
-4. 在[Cloud Build版本紀錄](https://console.cloud.google.com/cloud-build/builds?authuser=1&hl=zh-tw&project=app-wee-landing-prod)查看部署進度，並在[Cloud run](https://console.cloud.google.com/run/detail/asia-east1/wee-openplatform-landing-page-prod/metrics?authuser=1&hl=zh-tw&project=app-wee-landing-prod)查看結果
-5. [Production link](https://wee.vpon.com/)
+### 功能特色
+1. 捐血查詢頁面
+    * 顯示當前血庫狀況。
+    * 提供捐血中心與捐血車的地圖定位，並顯示用戶當前所在位置。
+2. 捐血場所資訊
+    * 地點列表：顯示各捐血地點並提供詳細資訊，包括：
+        * 距離用戶的距離。
+        * 營業時間、聯絡電話及當前捐血活動。
+3. 個人資訊與捐血紀錄
+    * 個人檔案：顯示用戶下次可捐血日期，並記錄歷史捐血的時間和地點。
+    * 遊戲化經驗值：根據用戶捐血次數累積經驗值，讓吉祥物「小血怪」成長。
+        * 小血怪互動：用戶可餵食（捐血）或簡單互動（摸頭）增強使用者連結。
+    * 成就徽章：用戶可根據捐血次數取得成就徽章，展示在個人檔案中。
+4. 捐血優惠
+    * 商家優惠：整合周邊商家優惠，可快速瀏覽參加優惠的商家地點。
+5. 捐血聯誼活動
+    * 透過整合區公所的單身聯誼活動，提供捐血者參加社交活動的機會。
 
-#### Cloud Storage
-[wee-landing-prod](https://console.cloud.google.com/storage/browser/wee-landing-prod;tab=objects?forceOnBucketsSortingFiltering=true&authuser=1&hl=zh-tw&project=app-wee-landing-prod&prefix=&forceOnObjectsSortingFiltering=false)
-
-*  設定CORS
-
-`gcloud storage buckets update gs://wee-landing-prod --cors-file=cors_file.json`
-```
-[
-    {
-      "origin": ["{Production link}"],
-      "method": ["GET"],
-      "responseHeader": ["Content-Type"],
-      "maxAgeSeconds": 3600
-    }
-]
+## 產品展示
+https://youtube.com/shorts/ZK284uzPn_4?si=V9eR5vjTyvf9TdRA
