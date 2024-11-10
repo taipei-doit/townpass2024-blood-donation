@@ -23,3 +23,17 @@
 
 ## 產品展示
 https://youtube.com/shorts/ZK284uzPn_4?si=V9eR5vjTyvf9TdRA
+
+### 開發相關資訊
+#### 地圖 API 設定
+地圖功能使用 Mapbox API（透過建立一個 Mapbox 帳戶並按照[此指南](https://docs.mapbox.com/help/getting-started/access-tokens/)建立您自己的 Mapbox 金鑰），需要建立 `frontend/.env` 檔案並設定以下環境變數：
+```typescript
+NEXT_PUBLIC_MAPBOXACCESSTOKEN=your_mapbox_token_here
+```
+如此可用於`frontend/components/query/index.tsx` L44 中
+```typescript
+<Map
+    mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOXACCESSTOKEN}
+    // ... other map properties
+/>
+```
