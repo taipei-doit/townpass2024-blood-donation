@@ -1,0 +1,19 @@
+html,
+body{
+    margin: 0;
+    overflow-x: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Microsoft JhengHei", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    height: auto;
+}
+
+// 讓 safari 不要顯示 icon
+input::-webkit-contacts-auto-fill-button {
+    visibility: hidden;
+    display: none !important;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+}
+*{
+    -webkit-tap-highlight-color: transparent;
+}

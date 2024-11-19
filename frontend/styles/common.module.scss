@@ -1,0 +1,51 @@
+@import "@/styles/mixin.module.scss";
+.contentBlock {
+    margin: auto;
+    width: 1000px;
+    .title {
+        @include --text-caption();
+        @include routerLink();
+        font-weight: 600;
+        margin-bottom: 10px;
+        &.center {
+            margin: auto;
+            text-align: center;
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .contentBlock {
+        width: 900px;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    .contentBlock {
+        width: 800px;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .contentBlock {
+        width: 700px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .contentBlock {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .contentBlock {
+        width: 400px;
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .contentBlock {
+        width: 90vw;
+    }
+}
