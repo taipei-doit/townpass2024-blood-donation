@@ -5,4 +5,5 @@
     - https://www.ptt.cc/bbs/Lifeismoney/M.1721460420.A.CBD.html
     - https://www.ptt.cc/bbs/Lifeismoney/M.1717436215.A.65A.html
 
-- 主要是以 re 正規表達式方式整理其較系統性的文字，並彙整為可直接使用的表格，欄位包含有：日期、星期、捐血地點、營業時間、優惠內容、圖片網址。另附上 google map api 的 geocoding 程式碼，將地址轉換為經緯度座標。
+- 主要是以 re 正規表達式方式整理其較系統性的文字，並彙整為可直接使用的表格，欄位包含有：日期、星期、捐血地點、營業時間、優惠內容、圖片網址。
+- 另附上 google map api 的 geocoding 程式碼，將地址轉換為經緯度座標。
